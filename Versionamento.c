@@ -1,89 +1,100 @@
 #include <stdio.h>
 #include <string.h>
-
+typedef struct personagem
+{
+    int vida, ataque;
+    char nome[25];
+} Personagem;
+typedef struct time
+{
+    Personagem Heroi;
+    Personagem Lacaio1;
+    Personagem Lacaio2;
+    int ponto;
+} Time;
 int main(){
-    int vidaH1, vidaH2, vidaL1, ataqueL1, vidaL2, ataqueL2, vidaL3, ataqueL3, vidaL4, ataqueL4, ponto1, ponto2;
-    char nomeH1[25], nomeH2[25], nomeL1[25], nomeL2[25], nomeL3[25], nomeL4[25], lacaio1[25], lacaio2[25];
+    Time time1, time2;
+    char lacaio1[25], lacaio2[25];
     printf("\n*********************");
     printf("\nArena HearthStone\n");
     printf("*********************\n");
     printf("\nDados da batalha:\n");
     
     printf("\nEscolha um nome para o Heroi 1:");
-    scanf("%s",nomeH1);
-    printf("Heroi %s - Pontos de Vida:",nomeH1);
-    scanf("%d",&vidaH1);
-    if (vidaH1<=0 || vidaH1>30){
-        printf("...Error...\nEscolha numeros entre 1 e 30. Para a vida do Heroi %s. \n", nomeH1);
+    scanf("%s",time1.Heroi.nome);
+    printf("Heroi %s - Pontos de Vida:",time1.Heroi.nome);
+    scanf("%d",&time1.Heroi.vida);
+    if (time1.Heroi.vida<=0 || time1.Heroi.vida>30){
+        printf("...Error...\nEscolha numeros entre 1 e 30. Para a vida do Heroi %s. \n", time1.Heroi.nome);
         return 1;
     }
 
     printf("\nEscolha um nome para o Lacaio 1:");
-    scanf("%s",nomeL1);
-    printf("Lacaio %s - Pontos de Vida:",nomeL1);
-    scanf("%d",&vidaL1);
-    if (vidaL1<=0 || vidaL1>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", nomeL1);
+    scanf("%s",time1.Lacaio1.nome);
+    printf("Lacaio %s - Pontos de Vida:",time1.Lacaio1.nome);
+    scanf("%d",&time1.Lacaio1.vida);
+    if (time1.Lacaio1.vida<=0 || time1.Lacaio1.vida>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", time1.Lacaio1.nome);
         return 1;
     }
-    printf("Lacaio %s - Pontos de Ataque:",nomeL1);
-    scanf("%d",&ataqueL1);
-    if (ataqueL1 <=0 || ataqueL1>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", nomeL1);
+    printf("Lacaio %s - Pontos de Ataque:",time1.Lacaio1.nome);
+    scanf("%d",&time1.Lacaio1.ataque);
+    if (time1.Lacaio1.ataque <=0 || time1.Lacaio1.ataque>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", time1.Lacaio1.nome);
         return 1;
     }
 
     printf("\nEscolha um nome para o Lacaio 2:");
-    scanf("%s",nomeL2);
-    printf("Lacaio %s - Pontos de Vida:",nomeL2);
-    scanf("%d",&vidaL2);
-    if (vidaL2<=0 || vidaL2>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", nomeL2);
+    scanf("%s",time1.Lacaio2.nome);
+    printf("Lacaio %s - Pontos de Vida:",time1.Lacaio2.nome);
+    scanf("%d",&time1.Lacaio2.vida);
+    if (time1.Lacaio2.vida<=0 || time1.Lacaio2.vida>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", time1.Lacaio2.nome);
         return 1;
     }
-    printf("Lacaio %s - Pontos de Ataque:",nomeL2);
-    scanf("%d",&ataqueL2);
-    if (ataqueL2 <=0 || ataqueL2>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", nomeL2);
+    printf("Lacaio %s - Pontos de Ataque:",time1.Lacaio2.nome);
+    scanf("%d",&time1.Lacaio2.ataque);
+    if (time1.Lacaio2.ataque <=0 || time1.Lacaio2.ataque>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", time1.Lacaio2.nome);
         return 1;
     }
 
     printf("\nEscolha um nome para o Heroi 2:");
-    scanf("%s",nomeH2);
-    printf("Heroi %s - Pontos de Vida:", nomeH2);
-    scanf("%d",&vidaH2);
-    if (vidaH2<=0 || vidaH2>30){
-        printf("...Error...\nEscolha numeros entre 1 e 30. Para a vida do Heroi %s. \n", nomeH2);
+    scanf("%s",time2.Heroi.nome);
+    printf("Heroi %s - Pontos de Vida:", time2.Heroi.nome);
+    scanf("%d",&time2.Heroi.vida);
+    if (time2.Heroi.vida<=0 || time2.Heroi.vida>30){
+        printf("...Error...\nEscolha numeros entre 1 e 30. Para a vida do Heroi %s. \n", time2.Heroi.nome);
         return 1;
     }
 
     printf("\nEscolha um nome para o Lacaio 3:");
-    scanf("%s",nomeL3);
-    printf("Lacaio %s - Pontos de Vida:",nomeL3);
-    scanf("%d",&vidaL3);
-    if (vidaL3<=0 || vidaL3>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", nomeL3);
+    scanf("%s",time2.Lacaio1.nome);
+    printf("Lacaio %s - Pontos de Vida:",time2.Lacaio1.nome);
+    scanf("%d",&time2.Lacaio1.vida);
+    if (time2.Lacaio1.vida<=0 || time2.Lacaio1.vida>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", time2.Lacaio1.nome);
         return 1;
     }
-    printf("Lacaio %s - Pontos de Ataque:",nomeL3);
-    scanf("%d",&ataqueL3);
-    if (ataqueL3 <=0 || ataqueL3>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", nomeL3);
+    printf("Lacaio %s - Pontos de Ataque:",time2.Lacaio1.nome);
+    scanf("%d",&time2.Lacaio1.ataque);
+    if (time2.Lacaio1.ataque <=0 || time2.Lacaio1.ataque>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", time2.Lacaio1.nome);
         return 1;
     }
 
     printf("\nEscolha um nome para o Lacaio 4:");
-    scanf("%s",nomeL4);
-    printf("Lacaio %s - Pontos de Vida:",nomeL4);
-    scanf("%d",&vidaL4);
-    if (vidaL4<=0 || vidaL4>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", nomeL4);
+    scanf("%s",time2.Lacaio2.nome);
+    printf("Lacaio %s - Pontos de Vida:",time2.Lacaio2.nome);
+    scanf("%d",&time2.Lacaio2.vida);
+    if (time2.Lacaio2.vida<=0 || time2.Lacaio2.vida>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para a vida do Lacaio %s. \n", time2.Lacaio2.nome);
         return 1;
     }
-    printf("Lacaio %s - Pontos de Ataque:",nomeL4);
-    scanf("%d",&ataqueL4);
-    if (ataqueL4 <=0 || ataqueL4>10){
-        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", nomeL4);
+    printf("Lacaio %s - Pontos de Ataque:",time2.Lacaio2.nome);
+    scanf("%d",&time2.Lacaio2.ataque);
+    if (time2.Lacaio2.ataque <=0 || time2.Lacaio2.ataque>10){
+        printf("...Error...\nEscolha numeros entre 1 e 10. Para o ataque do Lacaio %s. \n", time2.Lacaio2.nome);
         return 1;
     }
 
@@ -94,156 +105,156 @@ int main(){
     do{
         printf("\nEscolha um Lacaio para atacar:");
         scanf("%s",lacaio1);
-        if(strcmp(lacaio1, nomeL3) == 0){
+        if(strcmp(lacaio1, time2.Lacaio1.nome) == 0){
             printf("...Error...\nLacaio incorreto.\n");
         }
-        else if(strcmp(lacaio1,nomeL4) == 0){
+        else if(strcmp(lacaio1,time2.Lacaio2.nome) == 0){
             printf("...Error...\nLacaio incorreto.\n");
         }
-        else if(strcmp(lacaio1,nomeH1) == 0){
+        else if(strcmp(lacaio1,time1.Heroi.nome) == 0){
             printf("...Error...\nLacaio incorreto.\n");
         }
-        else if(strcmp(lacaio1,nomeH2) == 0){
+        else if(strcmp(lacaio1,time2.Heroi.nome) == 0){
             printf("...Error...\nLacaio incorreto.\n");
         }
     }
 
-    while(strcmp(lacaio1, nomeL3) == 0 || strcmp(lacaio1, nomeL4) == 0 ||  strcmp(lacaio1, nomeH1) == 0 || strcmp(lacaio1, nomeH2) == 0);           //Compara o nome do personagem escolhida pelo jogador e se for o personagem errado, o programa repete a pergunta/ a frase até o jogador escolher o Personagem correto.
+    while(strcmp(lacaio1, time2.Lacaio1.nome) == 0 || strcmp(lacaio1, time2.Lacaio2.nome) == 0 ||  strcmp(lacaio1, time1.Heroi.nome) == 0 || strcmp(lacaio1, time2.Heroi.nome) == 0);           //Compara o nome do personagem escolhida pelo jogador e se for o personagem errado, o programa repete a pergunta/ a frase até o jogador escolher o Personagem correto.
     printf("Ataque: %s\n", lacaio1);
 
     do{
         printf("Escolha um dos personagens para sofrer o ataque:");
         scanf("%s",lacaio2);
-        if(strcmp(lacaio2, nomeL1) == 0){
+        if(strcmp(lacaio2, time1.Lacaio1.nome) == 0){
             printf("...Error...\nPersonagem incorreto.\n");
         }
-        else if(strcmp(lacaio2, nomeL2) == 0){
+        else if(strcmp(lacaio2, time1.Lacaio2.nome) == 0){
         printf("...Error...\nPersonagem incorreto\n");
         }
-        else if(strcmp(lacaio2,nomeH1) == 0){
+        else if(strcmp(lacaio2,time1.Heroi.nome) == 0){
             printf("...Error...\nLacaio incorreto.\n");
         }
     }
-    while(strcmp(lacaio2, nomeL1) == 0 || strcmp(lacaio2, nomeL2) == 0 || strcmp(lacaio2, nomeH1) == 0);
+    while(strcmp(lacaio2, time1.Lacaio1.nome) == 0 || strcmp(lacaio2, time1.Lacaio2.nome) == 0 || strcmp(lacaio2, time1.Heroi.nome) == 0);
     printf("Alvo: %s\n", lacaio2);
 
-    if(strcmp (lacaio1, nomeL1) == 0){
-        if(strcmp (lacaio2, nomeL3) == 0){
-            printf("Lacaio %s ataca Lacaio %s.\n", nomeL1, nomeL3);
-            if(ataqueL1>=vidaL3){
-                printf("Lacaio %s Morreu.\n", nomeL3);
-                if(ataqueL1>=vidaL1){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL1);
+    if(strcmp (lacaio1, time1.Lacaio1.nome) == 0){
+        if(strcmp (lacaio2, time2.Lacaio1.nome) == 0){
+            printf("Lacaio %s ataca Lacaio %s.\n", time1.Lacaio1.nome, time2.Lacaio1.nome);
+            if(time1.Lacaio1.ataque>=time2.Lacaio1.vida){
+                printf("Lacaio %s Morreu.\n", time2.Lacaio1.nome);
+                if(time1.Lacaio1.ataque>=time1.Lacaio1.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio1.nome);
                 }
                 else{
-                    ponto1=vidaL1-ataqueL1;
-                    printf("Vida do Lacaio %s: %d\n", nomeL1, ponto1);
+                    time1.ponto=time1.Lacaio1.vida-time1.Lacaio1.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio1.nome, time1.ponto);
                 }
             }    
             else{
-                ponto2=vidaL3-ataqueL1;
-                printf("Vida do Lacaio %s: %d\n",nomeL3, ponto2);
-                if(ataqueL1>=vidaL1){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL1);
+                time2.ponto=time2.Lacaio1.vida-time1.Lacaio1.ataque;
+                printf("Vida do Lacaio %s: %d\n",time2.Lacaio1.nome, time2.ponto);
+                if(time1.Lacaio1.ataque>=time1.Lacaio1.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio1.nome);
                 }
                 else{
-                    ponto1=vidaL1-ataqueL1;
-                    printf("Vida do Lacaio %s: %d\n", nomeL1, ponto1);
+                    time1.ponto=time1.Lacaio1.vida-time1.Lacaio1.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio1.nome, time1.ponto);
                 }
             }
         }
-        else if(strcmp (lacaio2, nomeL4) == 0){
-            printf("Lacaio %s ataca Lacaio %s.\n", nomeL1, nomeL4);
-            if(ataqueL1>=vidaL4){
-                printf("Lacaio %s Morreu.\n", nomeL4);
-                if(ataqueL1>=vidaL1){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL1);
+        else if(strcmp (lacaio2, time2.Lacaio2.nome) == 0){
+            printf("Lacaio %s ataca Lacaio %s.\n", time1.Lacaio1.nome, time2.Lacaio2.nome);
+            if(time1.Lacaio1.ataque>=time2.Lacaio2.vida){
+                printf("Lacaio %s Morreu.\n", time2.Lacaio2.nome);
+                if(time1.Lacaio1.ataque>=time1.Lacaio1.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio1.nome);
                 }
                 else{
-                    ponto1=vidaL1-ataqueL1;
-                    printf("Vida do Lacaio %s: %d\n", nomeL1, ponto1);
+                    time1.ponto=time1.Lacaio1.vida-time1.Lacaio1.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio1.nome, time1.ponto);
                 }
             }
             else{
-                ponto2=vidaL4-ataqueL1;
-                printf("Vida do Lacaio %s: %d\n", nomeL4, ponto2);
-                if(ataqueL1>=vidaL1){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n",nomeL1);
+                time2.ponto=time2.Lacaio2.vida-time1.Lacaio1.ataque;
+                printf("Vida do Lacaio %s: %d\n", time2.Lacaio2.nome, time2.ponto);
+                if(time1.Lacaio1.ataque>=time1.Lacaio1.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n",time1.Lacaio1.nome);
                 }
                 else{
-                    ponto1=vidaL1-ataqueL1;
-                    printf("Vida do Lacaio %s: %d\n", nomeL1, ponto1);
+                    time1.ponto=time1.Lacaio1.vida-time1.Lacaio1.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio1.nome, time1.ponto);
                 }
             }
         }
-        else if(strcmp (lacaio2, nomeH2) == 0){
-            printf("Lacaio %s ataca Heroi %s.\n", nomeL1, nomeH2);
-            if(ataqueL1>=vidaH2){
-                printf("Heroi %s Morreu.\n", nomeH2);
+        else if(strcmp (lacaio2, time2.Heroi.nome) == 0){
+            printf("Lacaio %s ataca Heroi %s.\n", time1.Lacaio1.nome, time2.Heroi.nome);
+            if(time1.Lacaio1.ataque>=time2.Heroi.vida){
+                printf("Heroi %s Morreu.\n", time2.Heroi.nome);
             }
             else{
-                ponto2=vidaH2-ataqueL1;
-                printf("Vida do Heroi %s: %d\n", nomeH2, ponto2);
+                time2.ponto=time2.Heroi.vida-time1.Lacaio1.ataque;
+                printf("Vida do Heroi %s: %d\n", time2.Heroi.nome, time2.ponto);
             }
         }
     }
-    else if(strcmp (lacaio1, nomeL2) == 0){
-        if(strcmp (lacaio2, nomeL3) == 0){
-            printf("Lacaio %s ataca Lacaio %s.\n",nomeL2, nomeL3);
-            if(ataqueL2>=vidaL3){
-                printf("Lacaio %s Morreu.\n", nomeL3);
-                if(ataqueL2>=vidaL2){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL2);
+    else if(strcmp (lacaio1, time1.Lacaio2.nome) == 0){
+        if(strcmp (lacaio2, time2.Lacaio1.nome) == 0){
+            printf("Lacaio %s ataca Lacaio %s.\n",time1.Lacaio2.nome, time2.Lacaio1.nome);
+            if(time1.Lacaio2.ataque>=time2.Lacaio1.vida){
+                printf("Lacaio %s Morreu.\n", time2.Lacaio1.nome);
+                if(time1.Lacaio2.ataque>=time1.Lacaio2.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio2.nome);
                 }
                 else{
-                    ponto1=vidaL2-ataqueL2;
-                    printf("Vida do Lacaio %s: %d\n", nomeL2, ponto1);
+                    time1.ponto=time1.Lacaio2.vida-time1.Lacaio2.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio2.nome, time1.ponto);
                 }
             }
             else{
-                ponto2=vidaL3-ataqueL2;
-                printf("Vida do Lacaio %s: %d\n", nomeL3, ponto2);
-                if(ataqueL2>=vidaL2){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL2);
+                time2.ponto=time2.Lacaio1.vida-time1.Lacaio2.ataque;
+                printf("Vida do Lacaio %s: %d\n", time2.Lacaio1.nome, time2.ponto);
+                if(time1.Lacaio2.ataque>=time1.Lacaio2.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio2.nome);
                 }
                 else{
-                    ponto1=vidaL2-ataqueL2;
-                    printf("Vida do Lacaio %s: %d\n", nomeL2, ponto1);
+                    time1.ponto=time1.Lacaio2.vida-time1.Lacaio2.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio2.nome, time1.ponto);
                 }
             }
         }
-        else if(strcmp (lacaio2, nomeL4) == 0){
-            printf("Lacaio %s ataca Lacaio %s.\n", nomeL2, nomeL4);
-            if(ataqueL2>=vidaL4){
-                printf("Lacaio %s Morreu.\n", nomeL4);
-                if(ataqueL2>=vidaL2){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL2);
+        else if(strcmp (lacaio2, time2.Lacaio2.nome) == 0){
+            printf("Lacaio %s ataca Lacaio %s.\n", time1.Lacaio2.nome, time2.Lacaio2.nome);
+            if(time1.Lacaio2.ataque>=time2.Lacaio2.vida){
+                printf("Lacaio %s Morreu.\n", time2.Lacaio2.nome);
+                if(time1.Lacaio2.ataque>=time1.Lacaio2.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio2.nome);
                 }
                 else{
-                    ponto1=vidaL2-ataqueL2;
-                    printf("Vida do Lacaio %s: %d\n", nomeL2, ponto1);
+                    time1.ponto=time1.Lacaio2.vida-time1.Lacaio2.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio2.nome, time1.ponto);
                 }
             }
             else{
-                ponto2=vidaL4-ataqueL2;
-                printf("Vida do Lacaio %s: %d\n", nomeL4, ponto2);
-                if(ataqueL2>=vidaL2){
-                    printf("Lacaio %s Morreu, por dano de ataque.\n", nomeL2);
+                time2.ponto=time2.Lacaio2.vida-time1.Lacaio2.ataque;
+                printf("Vida do Lacaio %s: %d\n", time2.Lacaio2.nome, time2.ponto);
+                if(time1.Lacaio2.ataque>=time1.Lacaio2.vida){
+                    printf("Lacaio %s Morreu, por dano de ataque.\n", time1.Lacaio2.nome);
                 }
                 else{
-                    ponto1=vidaL2-ataqueL2;
-                    printf("Vida do Lacaio %s: %d\n", nomeL2, ponto1);
+                    time1.ponto=time1.Lacaio2.vida-time1.Lacaio2.ataque;
+                    printf("Vida do Lacaio %s: %d\n", time1.Lacaio2.nome, time1.ponto);
                 }
             }
         }
-           else if(strcmp (lacaio2, nomeH2) == 0){
-            printf("Lacaio %s ataca Heroi %s.\n", nomeL2, nomeH2);
-            if(ataqueL2>=vidaH2){
-                printf("Heroi %s Morreu.\n", nomeH2);
+           else if(strcmp (lacaio2, time2.Heroi.nome) == 0){
+            printf("Lacaio %s ataca Heroi %s.\n", time1.Lacaio2.nome, time2.Heroi.nome);
+            if(time1.Lacaio2.ataque>=time2.Heroi.vida){
+                printf("Heroi %s Morreu.\n", time2.Heroi.nome);
             }
             else{
-                ponto2=vidaH2-ataqueL2;
-                printf("Vida do Heroi %s: %d\n", nomeH2, ponto2);
+                time2.ponto=time2.Heroi.vida-time1.Lacaio2.ataque;
+                printf("Vida do Heroi %s: %d\n", time2.Heroi.nome, time2.ponto);
             }
         }
     }
